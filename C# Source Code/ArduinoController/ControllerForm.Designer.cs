@@ -49,7 +49,7 @@
             this.RedValue.Name = "RedValue";
             this.RedValue.Size = new System.Drawing.Size(13, 13);
             this.RedValue.TabIndex = 3;
-            this.RedValue.Text = "0";
+            this.RedValue.Text = Properties.Settings.Default.initRed.ToString();
             // 
             // RedLabelTrackbar
             // 
@@ -62,6 +62,7 @@
             this.RedLabelTrackbar.TabIndex = 1;
             this.RedLabelTrackbar.Tag = "";
             this.RedLabelTrackbar.TickFrequency = 10;
+            this.RedLabelTrackbar.Value = (int)Properties.Settings.Default.initRed;
             this.RedLabelTrackbar.Scroll += new System.EventHandler(this.RedTrackBarScroll);
             this.RedLabelTrackbar.ValueChanged += new System.EventHandler(this.RedLabelValueChanged);
             // 
@@ -76,6 +77,7 @@
             this.GreenTrackBar.TabIndex = 1;
             this.GreenTrackBar.Tag = "";
             this.GreenTrackBar.TickFrequency = 10;
+            this.GreenTrackBar.Value = (int)Properties.Settings.Default.initGreen;
             this.GreenTrackBar.Scroll += new System.EventHandler(this.GreenTrackBarScroll);
             this.GreenTrackBar.ValueChanged += new System.EventHandler(this.GreenTrackBarValueChanged);
             // 
@@ -96,7 +98,7 @@
             this.GreenValue.Name = "GreenValue";
             this.GreenValue.Size = new System.Drawing.Size(13, 13);
             this.GreenValue.TabIndex = 5;
-            this.GreenValue.Text = "0";
+            this.GreenValue.Text = Properties.Settings.Default.initGreen.ToString();
             // 
             // BlueValue
             // 
@@ -105,7 +107,7 @@
             this.BlueValue.Name = "BlueValue";
             this.BlueValue.Size = new System.Drawing.Size(13, 13);
             this.BlueValue.TabIndex = 8;
-            this.BlueValue.Text = "0";
+            this.BlueValue.Text = Properties.Settings.Default.initBlue.ToString();
             this.BlueValue.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // BlueLabel
@@ -129,6 +131,7 @@
             this.BlueTrackBar.TabIndex = 6;
             this.BlueTrackBar.Tag = "";
             this.BlueTrackBar.TickFrequency = 10;
+            this.BlueTrackBar.Value = (int)Properties.Settings.Default.initBlue;
             this.BlueTrackBar.Scroll += new System.EventHandler(this.BlueTrackBarScroll);
             this.BlueTrackBar.ValueChanged += new System.EventHandler(this.BlueTrackBarValueChanged);
             // 

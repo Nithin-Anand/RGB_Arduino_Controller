@@ -16,7 +16,9 @@ namespace ArduinoController
             InitializeComponent();
             _arduinoController = new ArduinoController();
             _arduinoController.Setup(this);
+            var x = this.Handle;
 
+            _arduinoController.Init(this);
         }
 
 

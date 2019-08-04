@@ -75,6 +75,13 @@ namespace ArduinoController
 
         }
 
+        public void Init(ControllerForm controllerForm)
+        {
+            SetRed(controllerForm._RedValue);
+            SetGreen(controllerForm._GreenValue);
+            SetBlue(controllerForm._BlueValue);
+            AddGlitter(controllerForm.glitter);
+        }
         // Exit function
         public void Exit()
         {

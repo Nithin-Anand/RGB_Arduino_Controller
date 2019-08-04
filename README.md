@@ -2,7 +2,7 @@
 
 ## Description
 
-A C# GUI and Arduino code for setting RGB values over serial for a WS8211 LED strip, connected to an Arduino. Allows for updating the colours of the LEDs without needing to modify, recompile and reupload Arduino code. Currently the program allows for the setting of (255, 255, 255) solid colour LEDs.
+A C# GUI and Arduino code for setting RGB values over serial for a WS8211 LED strip, connected to an Arduino. Allows for updating the colours of the LEDs without needing to modify, recompile and reupload Arduino code. Currently the program allows for the setting of RGB solid colour LEDs.
 
 ### Libraries Used
 

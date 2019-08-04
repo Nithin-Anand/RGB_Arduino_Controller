@@ -33,6 +33,11 @@ float ledFrequency             = 1.0; // Current blink frequency of Led
 int RED = 0;
 int GREEN = 0;
 int BLUE = 0;
+
+bool glitter;
+
+uint8_t gCurrentPatternNumber = 0; // Index number of which pattern is current
+
 CmdMessenger cmdMessenger = CmdMessenger(Serial);
 
 enum
@@ -44,8 +49,7 @@ enum
   kSetRed,
   kSetGreen,
   kSetBlue,
-  kInitGreen,
-  kInitBlue,
+  kAddGlitter,
 };
 
 void attachCommandCallbacks()
@@ -53,10 +57,10 @@ void attachCommandCallbacks()
   // Attach callback methods
   cmdMessenger.attach(OnUnknownCommand);
   cmdMessenger.attach(kSetLed, OnSetLed);
-  cmdMessenger.attach(kSetLedFrequency, OnSetRed);
   cmdMessenger.attach(kSetRed, OnSetRed);
   cmdMessenger.attach(kSetGreen, OnSetGreen);
   cmdMessenger.attach(kSetBlue, OnSetBlue);
+  cmdMessenger.attach(kAddGlitter, OnSetGlitter);
 }
 
 void OnUnknownCommand()
@@ -90,6 +94,14 @@ void OnSetBlue()
   cmdMessenger.sendCmd(kAcknowledge, BLUE);
 }
 
+void OnSetGlitter()
+{
+  glitter = cmdMessenger.readBoolArg();
+  if (glitter == 1) {  gCurrentPatternNumber = 1;  }
+  else {  gCurrentPatternNumber = 0;  }
+  cmdMessenger.sendCmd(kAcknowledge, "Glitter changed!");
+}
+
 
 void setup() {
   delay(3000); // 3 second delay for recovery
@@ -108,16 +120,14 @@ void setup() {
 
 // List of patterns to cycle through.  Each is defined as a separate function below.
 typedef void (*SimplePatternList[])();
-SimplePatternList gPatterns = { rainbow, rainbowWithGlitter , confetti, sinelon, juggle, bpm };
+SimplePatternList gPatterns = { solidColour, colourWithGlitter , confetti, sinelon, juggle, bpm };
 
-uint8_t gCurrentPatternNumber = 0; // Index number of which pattern is current
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
   
 void loop()
 { 
   // Call the current pattern function once, updating the 'leds' array
   gPatterns[gCurrentPatternNumber]();
-
   // send the 'leds' array out to the actual LED strip
   FastLED.show();  
   // insert a delay to keep theframerate modest
@@ -125,8 +135,6 @@ void loop()
   // Process incoming serial data, and perform callbacks
   cmdMessenger.feedinSerialData();
   delay(10);
-
-  EVERY_N_MILLISECONDS( 20 ) { rainbow(); };
 }
 
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
@@ -137,53 +145,16 @@ void nextPattern()
   gCurrentPatternNumber = (gCurrentPatternNumber + 1) % ARRAY_SIZE( gPatterns);
 }
 
-// Callback function that sets leds blinking frequency
-void changePattern()
+void solidColour() 
 {
-  // Read led state argument, interpret string as boolean
-  ledFrequency = cmdMessenger.readFloatArg();
-  // Make sure the frequency is not zero (to prevent divide by zero)
-  if (ledFrequency < 0.001) { ledFrequency = 0.001; } //might be deprecated
 
-  int intFrequency = int(ledFrequency);
-  switch(intFrequency) {
-    
-    case 1:
-      gCurrentPatternNumber = 0;
-      break;
-      
-    case 2:
-      gCurrentPatternNumber = 1;
-      break;
-      
-    case 3:
-      gCurrentPatternNumber = 2;
-      break;
-      
-    case 4:
-      gCurrentPatternNumber = 3;
-      break;
-      
-    case 5:
-      gCurrentPatternNumber = 4;
-      break;
-      
-    default:
-      gCurrentPatternNumber = 5;
-  }
-}
-
-void rainbow() 
-{
-  // FastLED's built-in rainbow generator
-  //fill_rainbow( leds, NUM_LEDS, gHue, 7);
   fill_solid( leds , NUM_LEDS, CRGB(RED, GREEN, BLUE));
 }
 
-void rainbowWithGlitter() 
+void colourWithGlitter() 
 {
   // built-in FastLED rainbow, plus some random sparkly glitter
-  rainbow();
+  solidColour();
   addGlitter(80);
 }
 

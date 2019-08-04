@@ -10,7 +10,7 @@ namespace ArduinoController
         public double _RedValue = Properties.Settings.Default.initRed;
         public double _GreenValue = Properties.Settings.Default.initGreen;
         public double _BlueValue = Properties.Settings.Default.initBlue;
-
+        public bool glitter = Properties.Settings.Default.initGlitter;
         public ControllerForm()
         {
             InitializeComponent();
@@ -86,10 +86,14 @@ namespace ArduinoController
             BlueTrackBarScroll(sender, e);
         }
 
-        // Set ledState checkbox
-        public void SetLedState(bool ledState)
+        private void glitterCheckBoxCheckedChanged(object sender, EventArgs e)
         {
+            glitter = glitterCheckBox.Checked;
+            _arduinoController.AddGlitter(glitterCheckBox.Checked);
         }
+
+
+
 
 
         /// <summary>

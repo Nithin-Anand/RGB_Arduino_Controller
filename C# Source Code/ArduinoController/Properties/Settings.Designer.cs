@@ -58,5 +58,17 @@ namespace ArduinoController.Properties {
                 this["initBlue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool initGlitter {
+            get {
+                return ((bool)(this["initGlitter"]));
+            }
+            set {
+                this["initGlitter"] = value;
+            }
+        }
     }
 }

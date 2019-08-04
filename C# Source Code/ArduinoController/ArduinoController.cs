@@ -26,7 +26,7 @@ namespace ArduinoController
         SetRed,
         SetGreen,
         SetBlue,
-
+        AddGlitter,
     };
 
     public class ArduinoController
@@ -89,7 +89,7 @@ namespace ArduinoController
             Properties.Settings.Default.initRed = _controllerForm._RedValue;
             Properties.Settings.Default.initGreen = _controllerForm._GreenValue;
             Properties.Settings.Default.initBlue = _controllerForm._BlueValue;
-
+            Properties.Settings.Default.initGlitter = _controllerForm.glitter;
             Properties.Settings.Default.Save();
         }
 
@@ -181,6 +181,20 @@ namespace ArduinoController
             _cmdMessenger.QueueCommand(new CollapseCommandStrategy(command));
         }
 
+        public void AddGlitter(bool glitter)
+        {
+            // Create command to start sending data
+            var command = new SendCommand((int)Command.AddGlitter, glitter);
+
+            // Put the command on the queue and wrap it in a collapse command strategy
+            // This strategy will avoid duplicates of this certain command on the queue: if a SetLedFrequency command is
+            // already on the queue when a new one is added, it will be replaced at its current queue-position. 
+            // Otherwise the command will be added to the back of the queue. 
+            // 
+            // This will make sure that when the slider raises a lot of events that each send a new blink frequency, the 
+            // embedded controller will not start lagging.
+            _cmdMessenger.QueueCommand(new CollapseCommandStrategy(command)); 
+        }
 
         // Sent command to change led on/of state
         public void SetLedState(bool ledState)

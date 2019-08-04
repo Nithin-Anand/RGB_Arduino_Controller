@@ -26,6 +26,7 @@
             this.BlueValue = new System.Windows.Forms.Label();
             this.BlueLabel = new System.Windows.Forms.Label();
             this.BlueTrackBar = new System.Windows.Forms.TrackBar();
+            this.glitterCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.RedLabelTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueTrackBar)).BeginInit();
@@ -59,8 +60,8 @@
             this.RedLabelTrackbar.SmallChange = 5;
             this.RedLabelTrackbar.TabIndex = 1;
             this.RedLabelTrackbar.Tag = "";
-            this.RedLabelTrackbar.Value = (int) Properties.Settings.Default.initRed;
             this.RedLabelTrackbar.TickFrequency = 10;
+            this.RedLabelTrackbar.Value = (int) Properties.Settings.Default.initRed;
             this.RedLabelTrackbar.Scroll += new System.EventHandler(this.RedTrackBarScroll);
             this.RedLabelTrackbar.ValueChanged += new System.EventHandler(this.RedLabelValueChanged);
             // 
@@ -96,7 +97,7 @@
             this.GreenValue.Name = "GreenValue";
             this.GreenValue.Size = new System.Drawing.Size(13, 13);
             this.GreenValue.TabIndex = 5;
-            this.GreenValue.Text = Properties.Settings.Default.initGreen.ToString(); ;
+            this.GreenValue.Text = Properties.Settings.Default.initGreen.ToString();
             // 
             // BlueValue
             // 
@@ -105,7 +106,7 @@
             this.BlueValue.Name = "BlueValue";
             this.BlueValue.Size = new System.Drawing.Size(13, 13);
             this.BlueValue.TabIndex = 8;
-            this.BlueValue.Text = Properties.Settings.Default.initBlue.ToString(); ;
+            this.BlueValue.Text = Properties.Settings.Default.initBlue.ToString();
             this.BlueValue.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // BlueLabel
@@ -129,15 +130,28 @@
             this.BlueTrackBar.TabIndex = 6;
             this.BlueTrackBar.Tag = "";
             this.BlueTrackBar.TickFrequency = 10;
-            this.BlueTrackBar.Value = (int) Properties.Settings.Default.initBlue;
+            this.BlueTrackBar.Value = (int)Properties.Settings.Default.initBlue;
             this.BlueTrackBar.Scroll += new System.EventHandler(this.BlueTrackBarScroll);
             this.BlueTrackBar.ValueChanged += new System.EventHandler(this.BlueTrackBarValueChanged);
+            // 
+            // glitterCheckBox
+            // 
+            this.glitterCheckBox.AutoSize = true;
+            this.glitterCheckBox.Checked = Properties.Settings.Default.initGlitter;
+            this.glitterCheckBox.Location = new System.Drawing.Point(17, 195);
+            this.glitterCheckBox.Name = "glitterCheckBox";
+            this.glitterCheckBox.Size = new System.Drawing.Size(80, 17);
+            this.glitterCheckBox.TabIndex = 9;
+            this.glitterCheckBox.Text = "Glitter";
+            this.glitterCheckBox.UseVisualStyleBackColor = true;
+            this.glitterCheckBox.CheckedChanged += new System.EventHandler(this.glitterCheckBoxCheckedChanged);
             // 
             // ControllerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 256);
+            this.Controls.Add(this.glitterCheckBox);
             this.Controls.Add(this.BlueValue);
             this.Controls.Add(this.BlueLabel);
             this.Controls.Add(this.BlueTrackBar);
@@ -167,6 +181,7 @@
         private System.Windows.Forms.Label BlueValue;
         private System.Windows.Forms.Label BlueLabel;
         private System.Windows.Forms.TrackBar BlueTrackBar;
+        private System.Windows.Forms.CheckBox glitterCheckBox;
     }
 }
 

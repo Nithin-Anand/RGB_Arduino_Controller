@@ -136,5 +136,10 @@ namespace ArduinoController
         {
 
         }
+
+        private void ControllerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

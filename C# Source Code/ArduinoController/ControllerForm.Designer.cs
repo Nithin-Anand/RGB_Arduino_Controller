@@ -17,6 +17,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControllerForm));
             this.RedLabel = new System.Windows.Forms.Label();
             this.RedValue = new System.Windows.Forms.Label();
             this.RedLabelTrackbar = new System.Windows.Forms.TrackBar();
@@ -48,7 +49,7 @@
             this.RedValue.Name = "RedValue";
             this.RedValue.Size = new System.Drawing.Size(13, 13);
             this.RedValue.TabIndex = 3;
-            this.RedValue.Text = Properties.Settings.Default.initRed.ToString();
+            this.RedValue.Text = "0";
             // 
             // RedLabelTrackbar
             // 
@@ -61,7 +62,6 @@
             this.RedLabelTrackbar.TabIndex = 1;
             this.RedLabelTrackbar.Tag = "";
             this.RedLabelTrackbar.TickFrequency = 10;
-            this.RedLabelTrackbar.Value = (int) Properties.Settings.Default.initRed;
             this.RedLabelTrackbar.Scroll += new System.EventHandler(this.RedTrackBarScroll);
             this.RedLabelTrackbar.ValueChanged += new System.EventHandler(this.RedLabelValueChanged);
             // 
@@ -76,7 +76,6 @@
             this.GreenTrackBar.TabIndex = 1;
             this.GreenTrackBar.Tag = "";
             this.GreenTrackBar.TickFrequency = 10;
-            this.GreenTrackBar.Value = (int)Properties.Settings.Default.initGreen;
             this.GreenTrackBar.Scroll += new System.EventHandler(this.GreenTrackBarScroll);
             this.GreenTrackBar.ValueChanged += new System.EventHandler(this.GreenTrackBarValueChanged);
             // 
@@ -97,7 +96,7 @@
             this.GreenValue.Name = "GreenValue";
             this.GreenValue.Size = new System.Drawing.Size(13, 13);
             this.GreenValue.TabIndex = 5;
-            this.GreenValue.Text = Properties.Settings.Default.initGreen.ToString();
+            this.GreenValue.Text = "0";
             // 
             // BlueValue
             // 
@@ -106,7 +105,7 @@
             this.BlueValue.Name = "BlueValue";
             this.BlueValue.Size = new System.Drawing.Size(13, 13);
             this.BlueValue.TabIndex = 8;
-            this.BlueValue.Text = Properties.Settings.Default.initBlue.ToString();
+            this.BlueValue.Text = "0";
             this.BlueValue.Click += new System.EventHandler(this.Label1_Click_1);
             // 
             // BlueLabel
@@ -130,17 +129,16 @@
             this.BlueTrackBar.TabIndex = 6;
             this.BlueTrackBar.Tag = "";
             this.BlueTrackBar.TickFrequency = 10;
-            this.BlueTrackBar.Value = (int)Properties.Settings.Default.initBlue;
             this.BlueTrackBar.Scroll += new System.EventHandler(this.BlueTrackBarScroll);
             this.BlueTrackBar.ValueChanged += new System.EventHandler(this.BlueTrackBarValueChanged);
             // 
             // glitterCheckBox
             // 
             this.glitterCheckBox.AutoSize = true;
-            this.glitterCheckBox.Checked = Properties.Settings.Default.initGlitter;
+            this.glitterCheckBox.Checked = global::ArduinoController.Properties.Settings.Default.initGlitter;
             this.glitterCheckBox.Location = new System.Drawing.Point(17, 195);
             this.glitterCheckBox.Name = "glitterCheckBox";
-            this.glitterCheckBox.Size = new System.Drawing.Size(80, 17);
+            this.glitterCheckBox.Size = new System.Drawing.Size(53, 17);
             this.glitterCheckBox.TabIndex = 9;
             this.glitterCheckBox.Text = "Glitter";
             this.glitterCheckBox.UseVisualStyleBackColor = true;
@@ -150,6 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(344, 256);
             this.Controls.Add(this.glitterCheckBox);
             this.Controls.Add(this.BlueValue);
@@ -161,8 +160,10 @@
             this.Controls.Add(this.RedValue);
             this.Controls.Add(this.RedLabel);
             this.Controls.Add(this.RedLabelTrackbar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ControllerForm";
-            this.Text = "Arduino Controller";
+            this.Text = "LED Colour Controller";
+            this.Load += new System.EventHandler(this.ControllerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RedLabelTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueTrackBar)).EndInit();

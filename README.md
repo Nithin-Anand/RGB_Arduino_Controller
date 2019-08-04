@@ -1,4 +1,4 @@
-# RGB_Arduino_Controller
+# Real-time RGB LED Updating for Arduino
 
 ## Description
 

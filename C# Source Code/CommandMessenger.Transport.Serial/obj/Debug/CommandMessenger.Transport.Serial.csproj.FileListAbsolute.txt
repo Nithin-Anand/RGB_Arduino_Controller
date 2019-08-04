@@ -1,0 +1,9 @@
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\bin\Debug\CommandMessenger.Transport.Serial.dll
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\bin\Debug\CommandMessenger.Transport.Serial.pdb
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\bin\Debug\CommandMessenger.dll
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\bin\Debug\CommandMessenger.pdb
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\obj\Debug\CommandMessenger.Transport.Serial.csprojAssemblyReference.cache
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\obj\Debug\CommandMessenger.Transport.Serial.csproj.CoreCompileInputs.cache
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\obj\Debug\CommandMessenger.Transport.Serial.csproj.CopyComplete
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\obj\Debug\CommandMessenger.Transport.Serial.dll
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.Serial\obj\Debug\CommandMessenger.Transport.Serial.pdb

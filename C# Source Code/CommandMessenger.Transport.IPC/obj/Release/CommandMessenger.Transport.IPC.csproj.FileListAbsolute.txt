@@ -1,0 +1,9 @@
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\bin\Release\CommandMessenger.Transport.Serial.dll
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\bin\Release\CommandMessenger.Transport.Serial.pdb
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\bin\Release\CommandMessenger.dll
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\bin\Release\CommandMessenger.pdb
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\obj\Release\CommandMessenger.Transport.IPC.csprojAssemblyReference.cache
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\obj\Release\CommandMessenger.Transport.IPC.csproj.CoreCompileInputs.cache
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\obj\Release\CommandMessenger.Transport.IPC.csproj.CopyComplete
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\obj\Release\CommandMessenger.Transport.Serial.dll
+C:\Users\Nithin\Documents\Personal Work\Arduino\Arduino-CmdMessenger\extras\CSharp\CommandMessenger.Transport.IPC\obj\Release\CommandMessenger.Transport.Serial.pdb

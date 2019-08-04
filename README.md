@@ -15,5 +15,5 @@ For the C# code, the CmdMessenger source files are bundled with the project file
 1. Refactor code
 2. Add Documentation
 3. Re-do comments and attribute everything properly
-4. Add support for LED lighting effects
+4. Add support for additional LED lighting effects
 5. Clean up the build files

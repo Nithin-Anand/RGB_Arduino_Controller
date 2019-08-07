@@ -17,6 +17,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControllerForm));
             this.RedLabel = new System.Windows.Forms.Label();
             this.RedValue = new System.Windows.Forms.Label();
@@ -28,6 +29,7 @@
             this.BlueLabel = new System.Windows.Forms.Label();
             this.BlueTrackBar = new System.Windows.Forms.TrackBar();
             this.glitterCheckBox = new System.Windows.Forms.CheckBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RedLabelTrackbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueTrackBar)).BeginInit();
@@ -147,6 +149,15 @@
             this.glitterCheckBox.UseVisualStyleBackColor = true;
             this.glitterCheckBox.CheckedChanged += new System.EventHandler(this.glitterCheckBoxCheckedChanged);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.BalloonTipText = "Control the PC Lighting Effects";
+            this.notifyIcon1.BalloonTipTitle = "RGBDuino";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "LED Control";
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
+            // 
             // ControllerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,10 +174,11 @@
             this.Controls.Add(this.RedValue);
             this.Controls.Add(this.RedLabel);
             this.Controls.Add(this.RedLabelTrackbar);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon"))); //Icon credit: https://icon-icons.com
             this.Name = "ControllerForm";
             this.Text = "LED Colour Controller";
             this.Load += new System.EventHandler(this.ControllerForm_Load);
+            this.Resize += new System.EventHandler(this.ControllerForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.RedLabelTrackbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlueTrackBar)).EndInit();
@@ -186,6 +198,7 @@
         private System.Windows.Forms.Label BlueLabel;
         private System.Windows.Forms.TrackBar BlueTrackBar;
         private System.Windows.Forms.CheckBox glitterCheckBox;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

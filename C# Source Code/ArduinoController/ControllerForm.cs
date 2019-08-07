@@ -30,6 +30,17 @@ namespace ArduinoController
             _arduinoController.SetRed(_RedValue);
         }
 
+        private void ControllerForm_Resize(object sender, EventArgs e)
+        {
+            //if the form is minimized  
+            //hide it from the task bar  
+            //and show the system tray icon (represented by the NotifyIcon control)  
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon1.Visible = true;
+            }
+        }
 
         // Set frequency slider
         public void SetRed(double redIntensity)
@@ -141,6 +152,14 @@ namespace ArduinoController
 
         private void ControllerForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon1.Visible = false;
 
         }
     }

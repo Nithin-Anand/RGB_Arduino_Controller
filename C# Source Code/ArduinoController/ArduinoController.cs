@@ -1,14 +1,10 @@
 ﻿// *** ArduinoController ***
 
-// This example expands the SendandReceiveArguments example. The PC will now sends commands to the Arduino when the trackbar 
-// is pulled. Every TrackBarChanged events will queue a message to the Arduino to set the blink speed of the 
-// internal / pin 13 LED
-// 
-// This example shows how to :
-// - use in combination with WinForms
-// - use in combination with ZedGraph
-// - send queued commands
-// - Use the CollapseCommandStrategy
+// Written by Nithin Anand
+// Last modified: 07/08/2019
+// Full documentation, links and credits at https://github.com/Nithin-Anand/RGB_Arduino_Controller
+// Credit to GitHub user thijse for the CmdMessenger library
+
 
 using System;
 using CommandMessenger;
@@ -21,8 +17,8 @@ namespace ArduinoController
     {
         Acknowledge,            // Command to acknowledge a received command
         Error,                  // Command to message that an error has occurred
-        SetLed,                 // Command to turn led ON or OFF
-        SetLedFrequency,        // Command to set led blink frequency
+        SetLed,                
+        SetLedFrequency,        
         SetRed,
         SetGreen,
         SetBlue,
